@@ -44,6 +44,7 @@ import java.io.IOException
 
 class CameraFragment : Fragment() {
 
+
     lateinit var binding: FragmentCameraBinding
     private val navController: NavController by lazy {
         Navigation.findNavController(requireActivity(), R.id.fragment_container)
