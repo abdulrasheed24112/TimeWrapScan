@@ -1,0 +1,40 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TimeWrap" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+         <item name="colorPrimary">@color/linear_white</item>
+    </style>
+    <style name="Theme.TimeWrap" parent="Base.Theme.TimeWrap" />
+
+    <style name="BottomSheetTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/orange_color</item>
+        <item name="colorControlActivated">@color/orange_color</item>
+    </style>
+
+    <style name="CustomShapeAppearance">
+        <item name="neumorph_cornerFamily">rounded</item>
+        <item name="neumorph_cornerSize">16dp</item>
+    </style>
+
+    <style name="CustomShapeAppearance1">
+        <item name="neumorph_cornerFamily">rounded</item>
+        <item name="neumorph_cornerSizeTopLeft">5dp</item>
+        <item name="neumorph_cornerSizeTopRight">5dp</item>
+        <item name="neumorph_cornerSizeBottomLeft">5dp</item>
+        <item name="neumorph_cornerSizeBottomRight">5dp</item>
+    </style>
+</resources>

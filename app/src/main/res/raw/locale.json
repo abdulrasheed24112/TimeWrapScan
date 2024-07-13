@@ -1,0 +1,77 @@
+[
+  {
+    "code": "en",
+    "name": "English (Default)",
+    "nativeName": "English (Default)"
+  },
+  {
+    "code": "ar",
+    "name": "Arabic",
+    "nativeName": "عربي"
+  },
+  {
+    "code": "pt",
+    "name": "Portuguese",
+    "nativeName": "Português"
+  },
+  {
+    "code": "es",
+    "name": "Spanish",
+    "nativeName": "Español"
+  },
+  {
+    "code": "fr",
+    "name": "French",
+    "nativeName": "Français"
+  },
+  {
+    "code": "hi",
+    "name": "Hindi",
+    "nativeName": " हिन्दी"
+  },
+  {
+    "code": "de",
+    "name": "German",
+    "nativeName": " Deutsch"
+  },
+  {
+    "code": "ko",
+    "name": "Korean",
+    "nativeName": " 한국인 "
+  },
+  {
+    "code": "ja",
+    "name": "Japanese",
+    "nativeName": "日本"
+  },
+  {
+    "code": "ru",
+    "name": "Russian",
+    "nativeName": "Русский"
+  },
+  {
+    "code": "th",
+    "name": "Thai",
+    "nativeName": "แบบไทย"
+  },
+  {
+    "code": "in",
+    "name": "Indonesian",
+    "nativeName": "Indonesia"
+  },
+  {
+    "code": "tr",
+    "name": "Turkish",
+    "nativeName": "Türkçe"
+  },
+  {
+    "code": "it",
+    "name": "Italian",
+    "nativeName": "Italian"
+  },
+  {
+    "code": "bn",
+    "name": "Bengali",
+    "nativeName": "Bengali"
+  }
+]

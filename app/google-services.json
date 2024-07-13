@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "651057777130",
+    "project_id": "timewrap-28707",
+    "storage_bucket": "timewrap-28707.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:651057777130:android:c036fa4939f669d5c5ca93",
+        "android_client_info": {
+          "package_name": "com.development.nest.time.wrap"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAprWVBfYBBMRDcq7lhoAt8aw5HiQ3_c4k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

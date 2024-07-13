@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboard_fragment">
+
+    <fragment
+        android:id="@+id/dashboard_fragment"
+        android:name="com.development.nest.time.wrap.fragments.DashBoardFragment"
+        android:label="Dashboard Fragment"
+        tools:layout="@layout/fragment_dash_board">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/camera_fragment"
+        android:name="com.development.nest.time.wrap.fragments.CameraFragment"
+        android:label="Camera Fragment"
+        tools:layout="@layout/fragment_camera">
+
+        <action
+            android:id="@+id/action_camera_to_image_viewer"
+            app:destination="@id/image_viewer_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/image_viewer_fragment"
+        android:name="com.development.nest.time.wrap.fragments.SaveFileFragment"
+        android:label="Save File"
+        tools:layout="@layout/fragment_file_save">
+
+        <argument
+            android:name="image"
+            app:argType="android.graphics.Bitmap"
+            app:nullable="true" />
+        <argument
+            android:name="video"
+            app:argType="string"
+            app:nullable="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/gallery_fragment"
+        android:name="com.development.nest.time.wrap.fragments.GallaryFragment"
+        android:label="Gallery Fragment"
+        tools:layout="@layout/fragment_gallary" />
+
+    <fragment
+        android:id="@+id/settings_fragment"
+        android:name="com.development.nest.time.wrap.fragments.SettingsFragment"
+        android:label="Settings Fragment"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/languages_fragment"
+        android:name="com.development.nest.time.wrap.fragments.LanguageFragment"
+        android:label="Languages Fragment"
+        tools:layout="@layout/fragment_language" />
+
+    <fragment
+        android:id="@+id/premium_fragment"
+        android:name="com.development.nest.time.wrap.fragments.PremiumFragment"
+        android:label="Premium Fragment"
+        tools:layout="@layout/fragment_premium" />
+
+    <fragment
+        android:id="@+id/files_fragment"
+        android:name="com.development.nest.time.wrap.fragments.FilesFragment"
+        android:label="Files Fragment"
+        tools:layout="@layout/fragment_files">
+
+        <action
+            android:id="@+id/action_files_to_file_viewer"
+            app:destination="@id/file_viewer_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/file_viewer_fragment"
+        android:name="com.development.nest.time.wrap.fragments.FileViewFragment"
+        android:label="File Viewer Fragment"
+        tools:layout="@layout/fragment_file_view">
+
+        <argument
+            android:name="filePath"
+            app:argType="string"
+            app:nullable="false" />
+
+    </fragment>
+
+</navigation>
