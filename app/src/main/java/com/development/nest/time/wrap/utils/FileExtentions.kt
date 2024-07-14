@@ -9,10 +9,13 @@ import android.database.Cursor
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.media.MediaScannerConnection
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.net.Uri
 import android.os.*
 import android.provider.MediaStore
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
@@ -40,6 +43,7 @@ import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.util.*
 import java.util.concurrent.TimeUnit
+var NATIVE_CTA_COLOR = "#FF9800"
 
 fun Activity.renameDialog(file: File, onCommit: (String) -> Unit) {
     val oldName = file.nameWithoutExtension
@@ -713,4 +717,47 @@ fun shareApp(context: Context?) {
         )
     } catch (e: Exception) {
     }
+}
+
+fun Context.isNetworkAvailable(): Boolean {
+    val connectivityManager =
+        getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        val nw = connectivityManager.activeNetwork ?: return false
+        val actNw = connectivityManager.getNetworkCapabilities(nw) ?: return false
+        return when {
+            actNw.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
+            actNw.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
+            //for other device how are able to connect with Ethernet
+            actNw.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> true
+            //for check internet over Bluetooth
+            actNw.hasTransport(NetworkCapabilities.TRANSPORT_BLUETOOTH) -> true
+            else -> false
+        }
+    } else {
+        val nwInfo = connectivityManager.activeNetworkInfo ?: return false
+        return nwInfo.isConnected
+    }
+}
+fun isInternetOn(context: Context): Boolean {
+    val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    val n = cm.activeNetwork
+    if (n != null) {
+        val nc = cm.getNetworkCapabilities(n)
+        return nc!!.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) || nc.hasTransport(
+            NetworkCapabilities.TRANSPORT_WIFI
+        )
+    }
+    return false
+}
+
+
+var staticDialog: Dialog? = null
+fun Activity.showLoadingDialog(): Dialog? {
+    val dialogView = LayoutInflater.from(this).inflate(R.layout.app_open_loading, null)
+    staticDialog = Dialog(this, android.R.style.Theme_Light_NoTitleBar_Fullscreen)
+    staticDialog?.setContentView(dialogView)
+    staticDialog?.setCancelable(false)
+    if (!staticDialog?.isShowing!!) staticDialog?.show()
+    return staticDialog
 }

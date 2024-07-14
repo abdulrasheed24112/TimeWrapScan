@@ -33,9 +33,7 @@ class MainActivity : BaseActivity() {
 
         initializeNavController()
 
-//        if (isStart) {
-//            handleStartLogic()
-//        }
+
     }
 
     private fun setupFirebaseMessaging() {

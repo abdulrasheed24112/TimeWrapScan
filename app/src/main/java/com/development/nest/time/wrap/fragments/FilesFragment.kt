@@ -15,6 +15,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import com.development.nest.time.wrap.R
 import com.development.nest.time.wrap.adapters.GalleryAdapter
+import com.development.nest.time.wrap.ads.showInterstitial
 import com.development.nest.time.wrap.databinding.FragmentFilesBinding
 import com.development.nest.time.wrap.utils.AppEvents
 import com.development.nest.time.wrap.utils.cameraPermission
@@ -127,9 +128,11 @@ class FilesFragment : Fragment() {
 
         binding.warpPhotoNow.setOnClickListener {
             requireActivity().requestPermission(cameraPermission, requireActivity()) {
-                val bundle = Bundle()
-                bundle.putString("scanType", fragmentType)
-                navController.navigate(R.id.camera_fragment, bundle)
+                requireActivity().showInterstitial {
+                    val bundle = Bundle()
+                    bundle.putString("scanType", fragmentType)
+                    navController.navigate(R.id.camera_fragment, bundle)
+                }
             }
         }
 

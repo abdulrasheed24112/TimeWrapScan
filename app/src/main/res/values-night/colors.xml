@@ -17,6 +17,8 @@
     <color name="white_transparent_50">#50FFFFFF</color>
     <color name="textColor1_trans_50">#501C1B1F</color>
     <color name="white_transparent_60">#60FFFFFF</color>
+    <color name="grey">#969696</color>
+    <color name="light_grey">#ffdadb</color>
 
     <color name="orange_color">#F64F2B</color>
     <color name="background_color">#0E0E0E</color>

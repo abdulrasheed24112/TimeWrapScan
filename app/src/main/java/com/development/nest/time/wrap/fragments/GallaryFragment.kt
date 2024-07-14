@@ -9,23 +9,34 @@ import androidx.activity.OnBackPressedCallback
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.development.nest.time.wrap.R
-import com.development.nest.time.wrap.adapters.PagerAdapter
 import com.development.nest.time.wrap.adapters.ViewpagerAdapter
-import com.development.nest.time.wrap.databinding.FragmentDashBoardBinding
+import com.development.nest.time.wrap.ads.NativeAdsClass
 import com.development.nest.time.wrap.databinding.FragmentGallaryBinding
+import com.development.nest.time.wrap.utils.isNetworkAvailable
 import com.google.android.material.tabs.TabLayoutMediator
 
 class GallaryFragment : Fragment() {
 
-    lateinit var binding:FragmentGallaryBinding
+    lateinit var binding: FragmentGallaryBinding
     private val navController: NavController by lazy {
         Navigation.findNavController(requireActivity(), R.id.fragment_container)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val viewPagerAdapter = ViewpagerAdapter(listOf<Fragment>(FilesFragment(), FilesFragment()), requireActivity())
+        if (requireActivity().isNetworkAvailable()) {
+            NativeAdsClass(requireActivity()).setNativeAdView(
+                binding.nativeAdLayout.rootLayout,
+                binding.nativeAdLayout.splashShimmer,
+                binding.nativeAdLayout.nativeAdContainerView,
+                R.layout.small_native_ad,
+                getString(R.string.splash_native)
+            )
+        } else {
+            binding.nativeAdLayout.root.visibility = View.GONE
+        }
+        val viewPagerAdapter =
+            ViewpagerAdapter(listOf<Fragment>(FilesFragment(), FilesFragment()), requireActivity())
         binding.viewPager.adapter = viewPagerAdapter
         initilizeTabLayout()
         binding.cvBack.setOnClickListener {
@@ -41,25 +52,24 @@ class GallaryFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View? {
         binding = FragmentGallaryBinding.inflate(layoutInflater, container, false)
         return binding.root
 
     }
+
     private fun initilizeTabLayout() {
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             when (position) {
                 0 -> {
                     tab.text = getString(R.string.images)
                 }
+
                 1 -> {
                     tab.text = getString(R.string.videos)
                 }
             }
         }.attach()
-    }
-
-
-    companion object {
     }
 }

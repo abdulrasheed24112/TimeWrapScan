@@ -111,6 +111,9 @@
     <string name="flag">flag</string>
     <string name="arabic">Arabic</string>
     <string name="save">save</string>
+    <string name="ad">Ad</string>
+    <string name="later">img\n</string>
+    <string name="loading">Loading AD</string>
 
 
 </resources>
