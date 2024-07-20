@@ -51,7 +51,7 @@ class SettingsFragment : Fragment() {
             requireActivity().rateUsDialog()
         }
         binding.clPrivacy.setOnClickListener {
-            val url = "https://google.com"
+            val url = "https://sites.google.com/view/developmentnest-privacy-policy/home"
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse(url)
             startActivity(intent)

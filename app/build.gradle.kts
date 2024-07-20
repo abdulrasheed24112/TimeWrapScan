@@ -26,7 +26,6 @@ android {
                 "proguard-rules.pro"
             )
 
-            resValue("string", "admob_id", "ca-app-pub-3940256099942544/6300978111")
             resValue("string", "admob_interistitial", "ca-app-pub-3940256099942544/1033173712")
             resValue("string", "application_id", "ca-app-pub-3940256099942544~3347511713")
 
@@ -40,6 +39,12 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            resValue("string", "admob_interistitial", "ca-app-pub-2379284052533959/9776803427")
+            resValue("string", "application_id", "ca-app-pub-2379284052533959~1238686472")
+
+            resValue("string", "admob_app_open_id", "ca-app-pub-2379284052533959/2204585104")
+
+            resValue("string", "splash_native", "ca-app-pub-2379284052533959/2050372554")
         }
     }
     compileOptions {
