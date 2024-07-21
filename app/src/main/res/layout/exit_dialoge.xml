@@ -38,7 +38,7 @@
             android:text="@string/are_you_sure_to_exit"
             android:fontFamily="@font/abeezee"
             android:textStyle="bold"
-            android:textColor="@color/textColor3"
+            android:textColor="@color/white"
             android:textSize="18sp" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -64,7 +64,7 @@
             android:gravity="center"
             android:text="@string/not_now"
             android:fontFamily="@font/abeezee"
-            android:textColor="@color/linear_white"
+            android:textColor="@color/white"
             android:textSize="14sp" />
 
     </LinearLayout>
