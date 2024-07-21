@@ -1,7 +1,9 @@
 package com.development.nest.time.wrap.fragments
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -40,7 +42,7 @@ class SettingsFragment : Fragment() {
                 }
             })
 
-        binding.tvVersion.text = "Version ${BuildConfig.VERSION_NAME}"
+        binding.tvVersion.text = "Version ${getAppVersionName(requireActivity())}"
         binding.clShare.safeClick({
             shareApp(requireContext())
         })
@@ -71,6 +73,14 @@ class SettingsFragment : Fragment() {
         return binding.root
 
 
+    }
+    fun getAppVersionName(context: Context): String {
+        return try {
+            val packageInfo = context.packageManager.getPackageInfo(context.packageName, 0)
+            packageInfo.versionName ?: "1.0"
+        } catch (e: PackageManager.NameNotFoundException) {
+            "1.0"
+        }
     }
 
 
