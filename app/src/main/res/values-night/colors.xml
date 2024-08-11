@@ -11,9 +11,6 @@
     <color name="transparent">#00000000</color>
     <color name="transparent_50">#50000000</color>
     <color name="transparent_60">#60000000</color>
-    <color name="textColor">#F64F2B</color>
-    <color name="textColor1">#1C1B1F</color>
-    <color name="textColor2">#00BB1E</color>
     <color name="white_transparent_50">#50FFFFFF</color>
     <color name="textColor1_trans_50">#501C1B1F</color>
     <color name="white_transparent_60">#60FFFFFF</color>

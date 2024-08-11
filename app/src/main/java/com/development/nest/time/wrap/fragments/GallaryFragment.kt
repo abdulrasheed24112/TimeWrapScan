@@ -24,7 +24,7 @@ class GallaryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if (requireActivity().isNetworkAvailable()) {
+    /*    if (requireActivity().isNetworkAvailable()) {
             NativeAdsClass(requireActivity()).setNativeAdView(
                 binding.nativeAdLayout.rootLayout,
                 binding.nativeAdLayout.splashShimmer,
@@ -34,7 +34,7 @@ class GallaryFragment : Fragment() {
             )
         } else {
             binding.nativeAdLayout.root.visibility = View.GONE
-        }
+        }*/
         val viewPagerAdapter =
             ViewpagerAdapter(listOf<Fragment>(FilesFragment(), FilesFragment()), requireActivity())
         binding.viewPager.adapter = viewPagerAdapter

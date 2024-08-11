@@ -12,8 +12,8 @@ android {
         applicationId = "com.development.nest.time.wrap"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 5
+        versionName = "1.5"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -33,7 +33,7 @@ android {
             resValue("string", "splash_native", "ca-app-pub-3940256099942544/1044960115")
         }
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -96,7 +96,7 @@ dependencies {
     implementation("com.github.fornewid:neumorphism:0.3.2")
 
 
-    implementation("com.google.android.gms:play-services-ads:20.5.0")
+    implementation("com.google.android.gms:play-services-ads:23.2.0")
 
     implementation ("com.facebook.shimmer:shimmer:0.5.0@aar")
     implementation ("com.intuit.sdp:sdp-android:1.1.0")

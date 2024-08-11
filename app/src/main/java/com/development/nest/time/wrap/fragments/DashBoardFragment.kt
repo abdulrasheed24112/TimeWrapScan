@@ -41,6 +41,7 @@ class DashBoardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+/*
         if (requireActivity().isNetworkAvailable()) {
             NativeAdsClass(requireActivity()).setNativeAdView(
                 binding.nativeAdLayout.rootLayout,
@@ -52,6 +53,7 @@ class DashBoardFragment : Fragment() {
         } else {
             binding.nativeAdLayout.root.visibility = View.GONE
         }
+*/
 
         binding.cvCamera.setOnClickListener {
             requireActivity().requestPermission(cameraPermission, requireActivity()) {

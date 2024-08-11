@@ -30,7 +30,7 @@ class SplashActivity : BaseActivity() {
         setContentView(activitySplashBinding.root)
 
 
-        if (isNetworkAvailable()) {
+/*        if (isNetworkAvailable()) {
             Handler(Looper.getMainLooper()).postDelayed({
                 activitySplashBinding.progressBar.visibility = View.GONE
                 activitySplashBinding.btnStarted.visibility = View.VISIBLE
@@ -38,7 +38,7 @@ class SplashActivity : BaseActivity() {
         } else {
             activitySplashBinding.progressBar.visibility = View.GONE
             activitySplashBinding.btnStarted.visibility = View.VISIBLE
-        }
+        }*/
 
 
         val requiredPermissions = if (Build.VERSION.SDK_INT >= 33) {
@@ -75,7 +75,7 @@ class SplashActivity : BaseActivity() {
         activitySplashBinding.line.startAnimation(animation)
 
 
-        if (isNetworkAvailable()) {
+/*        if (isNetworkAvailable()) {
             NativeAdsClass(this@SplashActivity).setNativeAdView(
                 activitySplashBinding.nativeAdLayout.rootLayout,
                 activitySplashBinding.nativeAdLayout.splashShimmer,
@@ -85,7 +85,7 @@ class SplashActivity : BaseActivity() {
             )
         } else {
             activitySplashBinding.nativeAdLayout.root.visibility = View.GONE
-        }
+        }*/
         activitySplashBinding.btnStarted.setOnClickListener {
             showInterstitial {
                 if (!hasPermissions(requiredPermissions)) {

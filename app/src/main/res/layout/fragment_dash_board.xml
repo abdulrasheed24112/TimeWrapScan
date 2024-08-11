@@ -307,7 +307,7 @@
     </ScrollView>
 
 
-    <include
+  <!--  <include
         android:id="@+id/nativeAdLayout"
         layout="@layout/include_small_native_ad_layout"
         android:layout_width="match_parent"
@@ -318,5 +318,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
+-->
 </androidx.constraintlayout.widget.ConstraintLayout>
